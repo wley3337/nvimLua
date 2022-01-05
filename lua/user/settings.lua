@@ -1,0 +1,56 @@
+HOME = os.getenv("HOME")
+
+vim.o.syntax = "on"                         -- Enables syntax highlighing
+--vim.o.autochdir = true                         -- Your working directory will always be the same as your working directory
+vim.o.autoindent =true                         -- Good auto indent
+vim.o.background="dark"                     -- tell vim what the background color looks like
+vim.o.backup = false                            -- creates a backup file
+vim.o.clipboard="unnamedplus"               -- Copy paste between vim and everything else
+vim.o.cmdheight=2                         -- More space for displaying messages
+-- error vim.o.completeopt= "menuone noinsert"  -- removed "noselect" to allow for a default selection
+-- this is default value vim.o.conceallevel=0                      -- So that I can see `` in markdown files
+vim.o.cursorline = true                          -- Enable highlighting of the current line
+-- -- set cursorcolumn                        -- Enable highlighting of the current column
+vim.o.encoding="utf-8"                      -- The encoding displayed
+vim.o.expandtab=true                           -- Converts tabs to spaces
+-- this is the default value vim.o.fileencoding="UTF-8"                  -- The encoding written to file
+-- error vim.o.formatoptions="cpo-J"                  -- Stop newline continuation of comments trying from "cro"
+vim.o.hidden=true                              -- Required to keep multiple buffers open multiple buffers
+vim.o.history=1000                        -- Increase the undo limit
+vim.o.ignorecase=true                          -- ignores case in searching, required for smartcase to work
+vim.o.incsearch = true                          -- incremental search as you type
+vim.cmd [[set iskeyword+=-]] -- treat dash separated words as a word text object--
+vim.o.laststatus=0                        -- Always display the status line
+vim.cmd [[ set list listchars=tab:»·,trail:·,nbsp:· ]] --  Display extra whitespace
+vim.o.mouse="a"                           -- Enable your mouse
+vim.o.matchtime=0                         -- Speed up escape after (){} chars
+vim.o.errorbells = false                 -- No audio bells for errors
+vim.o.hlsearch= false                    -- Turns highlighting search off after hitting enter--
+-- vim.o.noshowmode=true                     -- We don"t need to see things like -- INSERT -- anymore
+vim.o.swapfile= false                    -- removes swap file
+vim.o.writebackup = false                      -- This is recommended by coc
+vim.o.number = true                             -- Line numbers
+vim.o.pumheight=10                        -- Makes popup menu smaller
+vim.o.relativenumber = true               -- Show line number on current line and relative numbers on all other lines
+-- default option vim.o.ruler = true         -- Show the cursor position all the time
+vim.o.scrolloff=5                         -- show 5 lines above and below cursor
+vim.o.shiftwidth=2                        -- Change the number of space characters inserted for indentation
+-- ---- Don"t pass messages to |ins-completion-menu|.
+vim.opt.shortmess:append "c"
+vim.o.showtabline=2                       -- Always show tabs
+vim.o.sidescrolloff = 8                   -- scrolloff N columns before edge of buffer
+vim.o.signcolumn="yes"                    -- Adds an extra column to the left of line numbers for icons Always show, otherwise it would shift the text each time
+vim.o.smarttab= true                            -- Makes tabbing smarter will realize you have 2 vs 4
+vim.o.smartcase = true                          -- Automatically switch search to case-sensitive when search query contains an uppercase
+vim.o.smartindent = true                        -- Makes indenting smart
+vim.o.spell = true                              -- Enable spell check
+vim.o.spellfile="$HOME/.vim-spell-en.utf-8.add" -- Name of the word list file where words are added for the |zg| and |zw| commands.
+vim.o.spelllang="en_us"                     -- Set region to US English
+vim.o.splitbelow= true                          -- Horizontal splits will automatically be below
+vim.o.splitright= true                          -- Vertical splits will automatically be to the right
+vim.o.tabstop=2                           -- Insert 2 spaces for a tab
+vim.o.termguicolors = true                -- set term guid colors ( most terminals support this & more colors than nvim does out of the box )
+vim.o.timeoutlen=200                      -- By default timeoutlen is 1000 ms
+vim.o.updatetime=300                      -- Faster completion
+vim.o.undodir="./undodir"      -- sets an undo directory
+vim.o.undofile=true                            -- makes an undo file for everything that you do
