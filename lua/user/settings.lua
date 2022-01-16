@@ -7,6 +7,7 @@ vim.o.background="dark"                     -- tell vim what the background colo
 vim.o.backup = false                            -- creates a backup file
 vim.o.clipboard="unnamedplus"               -- Copy paste between vim and everything else
 vim.o.cmdheight=2                         -- More space for displaying messages
+vim.o.colorcolumn="79"                      -- sets a column at N characters from edge
 -- error vim.o.completeopt= "menuone noinsert"  -- removed "noselect" to allow for a default selection
 -- this is default value vim.o.conceallevel=0                      -- So that I can see `` in markdown files
 vim.o.cursorline = true                          -- Enable highlighting of the current line

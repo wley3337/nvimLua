@@ -1,5 +1,6 @@
 -- local colorscheme = "material"
 local colorscheme = "tokyonight"
+-- local colorscheme = "darkspace"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 

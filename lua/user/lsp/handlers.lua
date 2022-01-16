@@ -97,8 +97,9 @@ end
 M.on_attach = function(client, bufnr)
   -- notify(client.name)
   if client.name == "tsserver" then
-    -- sets document formatting
-    client.resolved_capabilities.document_formatting = false
+    -- sets document formatting 
+    -- set to false to avoid conflict with null-ls for formatting
+    client.resolved_capabilities.document_formatting = false 
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
