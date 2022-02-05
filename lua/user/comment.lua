@@ -7,7 +7,7 @@ end
 comment.setup {
   toggler={
     -- Line-comment toggle keymap
-    line='<leader>c'
+    line='<leader>cc'
   },
   opleader={
     -- Line-comment keymay

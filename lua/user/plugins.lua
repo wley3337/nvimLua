@@ -47,18 +47,18 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"                       -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"                     -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs"                     -- Autopairs, integrates with both cmp and treesitter
-  use "ts-26a/vim-darkspace"
-  -- use "kyazdani42/nvim-web-devicons"              -- dependancy for nvim-tree and recommend for bufferline
-  -- use "kyazdani42/nvim-tree.lua"
-  -- use "akinsho/bufferline.nvim"                   -- recommends nvim-web-devicons as a dependancy
+  use "ts-26a/vim-darkspace"                      -- colorscheme
+  use "kyazdani42/nvim-web-devicons"              -- dependancy for nvim-tree and recommend for bufferline
+  use "kyazdani42/nvim-tree.lua"                  -- tree file explorer
+  use "akinsho/bufferline.nvim"                   -- recommends nvim-web-devicons as a dependancy
   -- use "moll/vim-bbye"                             -- if you close the last buffer in a split it places a new file there
   -- use "nvim-lualine/lualine.nvim"                 -- status line Lots of options, can put in custom functions too. Add python env and node version
   -- -- use "akinsho/toggleterm.nvim"                  --persistes and toggles multiple terminals. Going to use tmux for this
-  -- use "ahmedkhalf/project.nvim"                   -- allows switching between projects but maybe also used in treesitter for setting git root
+  use "ahmedkhalf/project.nvim"                   -- allows switching between projects but maybe also used in treesitter for setting git root
   -- use "lewis6991/impatient.nvim"                  -- optomizes startup by cacheing the packer setup should be required early
   -- use "lukas-reineke/indent-blankline.nvim"       -- marks indenttation in a file
   -- use "goolord/alpha-nvim"                        -- this is a startup page that lists previous openned files on a raw nvim start like spacemacks
-  -- use "antoinemadec/FixCursorHold.nvim"           -- This is needed to fix lsp doc highlight
+   use "antoinemadec/FixCursorHold.nvim"           -- This is needed to fix lsp doc highlight
   -- use "folke/which-key.nvim"                      -- bottom of page popup to sugest key bindings like spacemacks
 
   -- -- Colorschemes
@@ -80,17 +80,17 @@ return packer.startup(function(use)
   -- -- LSP
   use "neovim/nvim-lspconfig"                     -- enable LSP
   use "williamboman/nvim-lsp-installer"           -- simple to use language server installer
-  -- use "tamago324/nlsp-settings.nvim"              -- language server settings defined in json for
+  use "tamago324/nlsp-settings.nvim"              -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim"           -- for formatters and linters
 
  -- Telescope
   use "nvim-telescope/telescope.nvim"             -- dependancy plenary fuzzy finder
---  use 'nvim-telescope/telescope-media-files.nvim' -- media file preview for telescope
+  --  use 'nvim-telescope/telescope-media-files.nvim' -- media file preview for telescope
 
  -- Treesitter
   use {
-     "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
+    "nvim-treesitter/nvim-treesitter",
+     run = ":TSUpdate",
   }
   -- Rainbow
   use "p00f/nvim-ts-rainbow"

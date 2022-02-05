@@ -18,7 +18,7 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-    -- NORMAL --
+-- NORMAL --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -26,10 +26,16 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Move through soft-wrapped spaces
-keymap("n", "j", "v:count ? 'j': 'gj'", {expr=true})
-keymap("n", "k", "v:count ? 'k': 'gk'", {expr=true})
+keymap("n", "j", "v:count ? 'j': 'gj'", { expr = true })
+keymap("n", "k", "v:count ? 'k': 'gk'", { expr = true })
 
-keymap("n", "<leader>e", ":E <CR>", opts)
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":E <CR>", opts) -- nvim native file explorer
+
+-- Yank entire line
+keymap("n", "Y", "y", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -49,12 +55,15 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 
-      -- INSERT --
+-- FORMATTING --
+keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
+
+-- INSERT --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
-    -- VISUAL --
+-- VISUAL --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -67,17 +76,16 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- doesn't replace register with what you pasted on top of
 keymap("v", "p", '"_dP', opts)
 
-    -- VISUAL BLOCK --
+-- VISUAL BLOCK --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-    -- TERMINAL --
+-- TERMINAL --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-

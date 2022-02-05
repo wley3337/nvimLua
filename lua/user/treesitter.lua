@@ -14,7 +14,7 @@ configs.setup {
     disable = { "" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = true, -- the way vim does native highlighting
   },
-  indent = { enable = true, disable = { "" } }, -- disable indenting. yaml might be a problem
+  indent = { enable = true, disable = { "yaml" } }, -- disable indenting. yaml might be a problem
   rainbow = {
     enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
