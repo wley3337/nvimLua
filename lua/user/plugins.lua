@@ -102,6 +102,10 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim") -- like gitlens also provides line, hunk diffs
 	-- Surround
 	use("blackcauldron7/surround.nvim")
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
