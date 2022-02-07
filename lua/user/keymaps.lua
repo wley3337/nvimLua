@@ -34,7 +34,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>e", ":E <CR>", opts) -- nvim native file explorer
 
 -- Yank entire line
-keymap("n", "Y", "y", opts)
+-- keymap("n", "Y", "y", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)

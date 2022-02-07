@@ -3,6 +3,11 @@ if not status_ok then
 	print("Error loading lualine")
 	return
 end
+
+-- local function node_version()
+-- 	local _node_version = os.execute("./node_version.sh")
+-- 	return _node_version
+-- end
 --  line goes: A | B | C |    X | Y | Z
 lualine.setup({
 	options = {
