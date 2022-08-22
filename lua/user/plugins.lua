@@ -74,11 +74,12 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp") -- lsp handler
 
 	-- -- snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	-- use("L3MON4D3/LuaSnip") --snippet engine
+	-- use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- -- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
+	use("ray-x/lsp_signature.nvim") -- show funciton signiture when you type
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
@@ -101,7 +102,7 @@ return packer.startup(function(use)
 	-- -- Git
 	use("lewis6991/gitsigns.nvim") -- like gitlens also provides line, hunk diffs
 	-- Surround
-	use("blackcauldron7/surround.nvim")
+	-- use("blackcauldron7/surround.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },

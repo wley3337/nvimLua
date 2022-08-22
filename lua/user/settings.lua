@@ -52,6 +52,6 @@ vim.o.tabstop = 2 -- Insert 2 spaces for a tab
 vim.o.termguicolors = true -- set term guid colors ( most terminals support this & more colors than nvim does out of the box )
 vim.o.timeoutlen = 200 -- By default timeoutlen is 1000 ms
 vim.o.updatetime = 300 -- Faster completion
-vim.o.undodir = "$HOME/.config/nvim/undodir/" -- sets an undo directory
+vim.o.undodir = "/Users/hal/.config/nvim/undodir/" -- sets an undo directory
 vim.o.undofile = true -- makes an undo file for everything that you do
 vim.o.writebackup = false -- This is recommended by coc

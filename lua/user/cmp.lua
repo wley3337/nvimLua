@@ -169,8 +169,11 @@ cmp.setup {
     select = false,
   },
   -- documentation = false,
+  window ={
+
   documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  },
   },
   experimental = {
     ghost_text = true,
