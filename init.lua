@@ -10,7 +10,7 @@ require("user.autopairs")
 require("user.comment")
 require("user.gitsigns")
 require("user.plugin_settings.nvim-tree")
-require("user.bufferline")
+--[[ require("user.bufferline") ]]
 -- require("user.lualine")
 -- require "user.toggleterm"
 -- require "user.project"
@@ -18,5 +18,6 @@ require("user.bufferline")
 -- require "user.indentline"
 -- require "user.alpha"
 -- require "user.whichkey"
-require("user.autocommands")
+--[[ require("user.autocommands") ]]
+--[[ require("user.rust-tools") ]]
 -- require("user.surround")

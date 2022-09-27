@@ -15,6 +15,8 @@ Following along with a few tweaks ChrisAtMachine's [Nvim from Scratch Series](ht
 - `pyright` (`jedi_language_server` is also available)
 - `rust_analyser`
 
+- also install `fzf`
+
 ## Brew Installs
 
 - `brew install ripgrep` needed for telescope to grep ( get regular expression ) the directory for words in a file. [Repo](https://github.com/BurntSushi/ripgrep#installation)

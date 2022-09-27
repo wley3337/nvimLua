@@ -1,7 +1,7 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
-  print("Error loading null-ls")
-  return
+    print("Error loading null-ls")
+    return
 end
 
 -- https://github.com/jose-e/Users/hal/.cargo/binlias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -20,9 +20,9 @@ null_ls.setup {
     formatting.stylua,
     diagnostics.flake8,
   },
-  on_attach= function(client)
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  on_attach = function(client)
+      if client.resolved_capabilities.document_formatting then
+          vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
       end
-    end,
+  end,
 }

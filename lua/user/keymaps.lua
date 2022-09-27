@@ -2,6 +2,10 @@ local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
+-- native in the key map
+-- New in nvim v.7
+-- in normal mode ( "n" ) map "K", run command, only for this buffer { buffer =0}
+-- vim.keymap.set("n", "K", vim.lsp.buff.hover, { buffer = 0 })
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -17,7 +21,7 @@ vim.g.maplocalleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
-
+--- ':Telescope keymaps' for a searchable list of your keymaps
 -- NORMAL --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -53,7 +57,10 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Treesitter --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+--[[ keymap("n", "<leader>fif", "<cmd>lua require('telescope.builtin').()<cr>", opts) ]]
+keymap("n", "<leader>fff", "<cmd>lua require('user.custom_functions').curr_buf_fzf()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+
 
 -- FORMATTING --
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
@@ -82,6 +89,17 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- DAP ---
+keymap("n", "<F1>", "<Cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F2>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F3>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F4>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<leader>b ", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>B ", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+keymap("n", "<leader>lp ", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+keymap("n", "<leader>dr ", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
+keymap("n", "<leader>dl ", "<Cmd>lua require'dap'.run_last()<CR>", opts)
 
 -- TERMINAL --
 -- Better terminal navigation

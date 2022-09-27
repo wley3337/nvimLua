@@ -46,26 +46,26 @@ nvim_tree.setup({
 --  filters = {
 --  },
 
-    auto_reload_on_write = true,
-    create_in_closed_folder = false,
-    disable_netrw = false,
-    hijack_cursor = false,
-    hijack_netrw = true,
-    hijack_unnamed_buffer_when_opening = false,
-    ignore_buffer_on_setup = false,
-    open_on_setup = false,
-    open_on_setup_file = false,
-    open_on_tab = false,
-    ignore_buf_on_tab_change = {},
-    sort_by = "name",
-    root_dirs = {},
-    prefer_startup_root = false,
-    sync_root_with_cwd = false,
-    reload_on_bufenter = false,
-    respect_buf_cwd = false,
-    on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy
-    remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs)
-    view = {
+auto_reload_on_write = true,
+create_in_closed_folder = false,
+disable_netrw = false,
+hijack_cursor = false,
+hijack_netrw = true,
+hijack_unnamed_buffer_when_opening = false,
+ignore_buffer_on_setup = false,
+open_on_setup = false,
+open_on_setup_file = false,
+open_on_tab = false,
+ignore_buf_on_tab_change = {},
+sort_by = "name",
+root_dirs = {},
+prefer_startup_root = false,
+sync_root_with_cwd = false,
+reload_on_bufenter = false,
+respect_buf_cwd = false,
+on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy
+remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs)
+view = {
     adaptive_size = false,
     centralize_selection = false,
     width = 30,
@@ -80,13 +80,14 @@ nvim_tree.setup({
         custom_only = false,
         list = {
         -- user mappings go here
-            { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") }, -- key to open files
-            { key = "h", cb = tree_cb("close_node") },
-            { key = "v", cb = tree_cb("vsplit") },
+        { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") }, -- key to open files
+        { key = "h", cb = tree_cb("close_node") },
+        { key = "v", cb = tree_cb("vsplit") },
+        -- { key = "R", cb = },
         },
     },
-    },
-    renderer = {
+},
+renderer = {
     add_trailing = false,
     group_empty = false,
     highlight_git = false,
@@ -142,26 +143,26 @@ nvim_tree.setup({
     },
     special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
     symlink_destination = true,
-    },
-    hijack_directories = {
+},
+hijack_directories = {
     enable = true,
     auto_open = true,
-    },
-    update_focused_file = {
+},
+update_focused_file = {
     enable = false,
     update_root = false,
     ignore_list = {},
-    },
-    ignore_ft_on_setup = {
+},
+ignore_ft_on_setup = {
         "startify",
         "dashboard",
         "alpha",
-    },
-    system_open = {
+},
+system_open = {
     cmd = "",
     args = {},
-    },
-    diagnostics = {
+},
+diagnostics = {
     enable = false,
     show_on_dirs = false,
     debounce_delay = 50,
@@ -171,23 +172,23 @@ nvim_tree.setup({
         warning = "",
         error = "",
     },
-    },
-    filters = {
+},
+filters = {
     dotfiles = false,
     custom = {},
     exclude = {},
-    },
-    filesystem_watchers = {
+},
+filesystem_watchers = {
     enable = true,
     debounce_delay = 50,
-    },
-    git = {
+},
+git = {
     enable = true,
     ignore = true,
     show_on_dirs = true,
     timeout = 400,
-    },
-    actions = {
+},
+actions = {
     use_system_clipboard = true,
     change_dir = {
         enable = true,
@@ -213,16 +214,16 @@ nvim_tree.setup({
     remove_file = {
         close_window = true,
     },
-    },
-    trash = {
+},
+trash = {
     cmd = "gio trash",
     require_confirm = true,
-    },
-    live_filter = {
+},
+live_filter = {
     prefix = "[FILTER]: ",
     always_show_folders = true,
-    },
-    log = {
+},
+log = {
     enable = false,
     truncate = false,
     types = {
@@ -235,5 +236,5 @@ nvim_tree.setup({
         profile = false,
         watcher = false,
     },
-    },
+},
 })
