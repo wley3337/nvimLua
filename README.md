@@ -11,8 +11,8 @@ Following along with a few tweaks ChrisAtMachine's [Nvim from Scratch Series](ht
 ### Typical Servers I Install
 
 - `clangd`
-- `tsserver`
-- `pyright` (`jedi_language_server` is also available)
+- `tsserver` `npm install -g typescript-language-server typescript`
+- `pyright` (`jedi_language_server` is also available) `npm install -g pyright`
 - `rust_analyser`
 
 - also install `fzf`
