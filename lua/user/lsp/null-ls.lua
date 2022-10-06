@@ -18,11 +18,12 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		-- formatting.yapf,
 		formatting.stylua,
+		formatting.rustfmt,
 		diagnostics.flake8,
 	},
 	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+		if client.server_capabilities.documentFormattingProvider then
+			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 		end
 	end,
 })

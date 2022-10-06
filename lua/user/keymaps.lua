@@ -61,9 +61,8 @@ keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr
 keymap("n", "<leader>fff", "<cmd>lua require('user.custom_functions').curr_buf_fzf()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 
-
 -- FORMATTING --
-keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
 -- INSERT --
 -- Press jk fast to enter
@@ -97,7 +96,12 @@ keymap("n", "<F3>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F4>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
 keymap("n", "<leader>b ", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>B ", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<leader>lp ", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+keymap(
+	"n",
+	"<leader>lp ",
+	"<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+	opts
+)
 keymap("n", "<leader>dr ", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
 keymap("n", "<leader>dl ", "<Cmd>lua require'dap'.run_last()<CR>", opts)
 

@@ -1,4 +1,11 @@
 -- autocmd! remove all autocommands, if entered under a group it will clear that group
+--[[ vim.api.nvim_create_autocmd('BufWritePre', { ]]
+--[[   group = vim.api.nvim_create_augroup('PreSave', {clear=true}) ]]
+--[[   callback= function() ]]
+--[[      ]]
+--[[   end ]]
+--[[ }) ]]
+--[[ vim.api.nvim_create_autocmd('BufWritePre', {}) ]]
 vim.cmd[[
   " Helper functions need to be in scope
   " Trim trailing whitespace and extra lines
