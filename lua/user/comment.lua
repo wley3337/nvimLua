@@ -13,6 +13,9 @@ comment.setup({
 		-- Line-comment keymay
 		line = "<leader>c",
 	},
+	mappings = {
+		extra = true,
+	},
 	pre_hook = function(ctx)
 		local U = require("Comment.utils")
 
@@ -29,3 +32,5 @@ comment.setup({
 		})
 	end,
 })
+local comment_ft = require("Comment.ft")
+comment_ft.set("lua", { "-- %s", "--[[%s]]" })

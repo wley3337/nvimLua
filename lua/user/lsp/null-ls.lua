@@ -14,7 +14,9 @@ null_ls.setup({
 	sources = {
 		-- Settings here will override project level files like .prettierrc
 		-- formatting.prettier.with { extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } },
-		formatting.prettier,
+		formatting.prettier.with({
+			filetypes = { "html", "json", "yaml", "markdown" },
+		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		-- formatting.yapf,
 		formatting.stylua,

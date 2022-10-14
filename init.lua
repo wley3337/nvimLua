@@ -11,7 +11,7 @@ require("user.autopairs")
 require("user.comment")
 require("user.gitsigns")
 --[[ require("user.plugin_settings.nvim-tree") ]]
-require('user.lsp.null-ls')
+require("user.lsp.null-ls")
 --[[ require("user.bufferline") ]]
 -- require("user.lualine")
 -- require "user.toggleterm"

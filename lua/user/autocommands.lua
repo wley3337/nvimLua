@@ -6,7 +6,8 @@
 --[[   end ]]
 --[[ }) ]]
 --[[ vim.api.nvim_create_autocmd('BufWritePre', {}) ]]
-vim.cmd[[
+--[[ vim.api.nvim_create_autocmd("BufReadPost",{}) ]]
+vim.cmd([[
   " Helper functions need to be in scope
   " Trim trailing whitespace and extra lines
   function! s:TrimTrailingWhitespace()
@@ -44,4 +45,4 @@ vim.cmd[[
   "   autocmd!
   "   autocmd BufWritePre * undojoin | Neoformat
   " augroup END
-]]
+]])

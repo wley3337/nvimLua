@@ -112,3 +112,19 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+
+local file_exports = {}
+file_exports.gui_top_search = function(opts)
+	local layout_options = {
+		 layout_strategies = "horizontal",
+		layout_config = { width = 0.5, prompt_position = "top" },
+		sorting_strategy = "ascending",
+	}
+  -- merge the two options letting the incoming options overwrite the layout_options
+  for k,v in pairs(opts) do layout_options[k] = v end 
+  return layout_options
+  -- this is how you would use the theme
+	--[[ return require("telescope.themes").get_dropdown(opts) ]]
+end
+
+return file_exports

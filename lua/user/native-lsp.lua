@@ -1,3 +1,5 @@
+-- Telescope exports
+local cust_telescope = require("user.telescope")
 -- cmp completion
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -10,10 +12,20 @@ local lsp_formatting = function(bufnr)
 	})
 end
 
+local go_to_ref = function()
+	--[[ vim.lsp.buf.references({ includeDeclaration = false }) ]]
+	local opts = {
+		include_declaration = false,
+	}
+	require("telescope.builtin").lsp_references(cust_telescope.gui_top_search(opts))
+end
+
 local lsp_key_maps = function()
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-	vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 })
+	vim.keymap.set("n", "gr", go_to_ref, { buffer = 0 })
+	-- need to sort out how to run the diagnostics to a telescope list
+	--[[ vim.keymap.set("n", "<C-k>", require("telescope.builtin").lsp) ]]
 end
 
 local augroup = vim.api.nvim_create_augroup("LSPFormatting", {})
@@ -31,12 +43,12 @@ local on_attach = function(client, bufnr)
 	lsp_key_maps()
 end
 
-require("lspconfig").tsserver.setup({ on_attach = autocmd_format, capabilities = capabilities })
-require("lspconfig").rust_analyzer.setup({ on_attach = autocmd_format, capabilities = capabilities })
-require("lspconfig").pyright.setup({ on_attach = autocmd_format, capabilities = capabilities })
-require("lspconfig").jsonls.setup({ on_attach = autocmd_format, capabilities = capabilities })
+require("lspconfig").tsserver.setup({ on_attach = on_attach, capabilities = capabilities })
+require("lspconfig").rust_analyzer.setup({ on_attach = on_attach, capabilities = capabilities })
+require("lspconfig").pyright.setup({ on_attach = on_attach, capabilities = capabilities })
+require("lspconfig").jsonls.setup({ on_attach = on_attach, capabilities = capabilities })
 require("lspconfig").sumneko_lua.setup({
-	on_attach = autocmd_format,
+	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
 		Lua = {
