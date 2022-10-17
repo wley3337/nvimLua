@@ -88,6 +88,7 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- dependancy plenary fuzzy finder
+	use("nvim-telescope/telescope-file-browser.nvim") -- helps with file browsing and creating files
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- need to build as the repo doesn't currently supply the binary
 	--  use 'nvim-telescope/telescope-media-files.nvim' -- media file preview for telescope only works in Linux
 

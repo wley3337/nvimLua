@@ -1,7 +1,7 @@
 -- Telescope exports
 local cust_telescope = require("user.telescope")
 -- cmp completion
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({

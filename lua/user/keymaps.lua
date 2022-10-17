@@ -57,6 +57,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Treesitter --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+keymap("n", "<leader>fb", ":Telescope file_browser<cr>", opts)
 --[[ keymap("n", "<leader>fif", "<cmd>lua require('telescope.builtin').()<cr>", opts) ]]
 keymap("n", "<leader>fff", "<cmd>lua require('user.custom_functions').curr_buf_fzf()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
@@ -90,20 +91,20 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- DAP ---
-keymap("n", "<F1>", "<Cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F2>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F3>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F4>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
-keymap("n", "<leader>b ", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>B ", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+keymap("n", "<F1>", ": lua require('dap').continue()<cr>", opts)
+keymap("n", "<F2>", "<cmd>lua require('dap').step_into()<cr>", opts)
+keymap("n", "<F3>", "<cmd>lua require('dap').step_over()<cr>", opts)
+keymap("n", "<F4>", "<cmd>lua require('dap').step_out()<cr>", opts)
+keymap("n", "<F5>", ":lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>BP", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
 keymap(
 	"n",
 	"<leader>lp ",
-	"<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+	"<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
 	opts
 )
-keymap("n", "<leader>dr ", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
-keymap("n", "<leader>dl ", "<Cmd>lua require'dap'.run_last()<CR>", opts)
+keymap("n", "<leader>dr ", "<cmd>lua require'dap'.repl.open()<cr>", opts)
+keymap("n", "<leader>dl ", "<cmd>lua require('dap').run_last()<cr>", opts)
 
 -- TERMINAL --
 -- Better terminal navigation

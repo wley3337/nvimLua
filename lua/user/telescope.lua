@@ -107,23 +107,40 @@ telescope.setup({
 			--     filetypes = { "png", "webp", "jpg", "jpeg" },
 			--    find_cmd = "rg", -- find command (defaults to `fd`)
 			-- },
+			-- defaults
+			file_browser = {
+				theme = "ivy",
+				-- disables netrw and use telescope-file-browser in its place
+				hijack_netrw = true,
+				--[[ mappings = { ]]
+				--[[ 	["i"] = { ]]
+				--[[ 		-- your custom insert mode mappings ]]
+				--[[ 	}, ]]
+				--[[ 	["n"] = { ]]
+				--[[ 		-- your custom normal mode mappings ]]
+				--[[ 	}, ]]
+				--[[ }, ]]
+			},
 		},
 	},
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("file_browser")
 
 local file_exports = {}
 file_exports.gui_top_search = function(opts)
 	local layout_options = {
-		 layout_strategies = "horizontal",
+		layout_strategies = "horizontal",
 		layout_config = { width = 0.5, prompt_position = "top" },
 		sorting_strategy = "ascending",
 	}
-  -- merge the two options letting the incoming options overwrite the layout_options
-  for k,v in pairs(opts) do layout_options[k] = v end 
-  return layout_options
-  -- this is how you would use the theme
+	-- merge the two options letting the incoming options overwrite the layout_options
+	for k, v in pairs(opts) do
+		layout_options[k] = v
+	end
+	return layout_options
+	-- this is how you would use the theme
 	--[[ return require("telescope.themes").get_dropdown(opts) ]]
 end
 
