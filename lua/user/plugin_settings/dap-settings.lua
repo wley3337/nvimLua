@@ -10,6 +10,12 @@ if not dapui_status_ok then
 	return
 end
 
+local dap_virtual_text_status_ok, dap_virtual_text = pcall(require, "nvim-dap-virtual-text")
+if not dap_virtual_text_status_ok then
+	print("Dap Virtual Text didn't load")
+	return
+end
+
 dapui.setup(
 	--defaults
 	--[[   { ]]
@@ -86,6 +92,16 @@ dapui.setup(
 	--[[ } ]]
 )
 
+dap_virtual_text.setup()
+dap.listeners.after.event_initialized["dapui_config"] = function()
+	dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+	dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+	dapui.close()
+end
 dap.adapters.lldb = {
 	type = "executable",
 	--[[ command = "/Users/hal/.vscode/extensions/lanza.lldb-vscode-0.2.3/bin", -- adjust as needed, must be absolute path ]]
@@ -106,6 +122,8 @@ dap.adapters.lldb = {
 --[[ For compilers to find llvm you may need to set: ]]
 --[[   export LDFLAGS="-L/opt/homebrew/opt/llvm/lib" ]]
 --[[   export CPPFLAGS="-I/opt/homebrew/opt/llvm/include" ]]
+
+-- integrates with treesiter to see what the value of the variables as you step through
 -- adapter installation: https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Python
 -- python
 dap.configurations.python = {
@@ -149,6 +167,7 @@ dap.configurations.cpp = {
 	},
 }
 dap.configurations.c = dap.configurations.cpp
+-- I believe this is handled in rust-tools
 dap.configurations.rust = {
 	{
 		name = "Launch",
@@ -157,22 +176,11 @@ dap.configurations.rust = {
 		program = function()
 			return vim.fn.input("Name of app: ", vim.fn.getcwd() .. "/target/debug/", "file")
 		end,
-		--[[ program = "${workspaceFolder}/target/debug/mars_calc", ]]
+		--program = "${workspaceFolder}/target/debug/mars_calc",
 		cwd = "${workspaceFolder}",
 		stopOnEntry = false,
 		args = {},
-
-		-- 💀
-		-- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-		--
-		--    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-		--
-		-- Otherwise you might get the following error:
-		--
-		--    Error on launch: Failed to attach to the target process
-		--
-		-- But you should be aware of the implications:
-		-- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-		-- runInTerminal = false,
+		stdio = { "null" },
+		terminal = "external",
 	},
 }

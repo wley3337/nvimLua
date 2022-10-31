@@ -12,6 +12,14 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+--https://sharksforarms.dev/posts/neovim-rust/
+-- Set completeopt to have a better completion experience
+-- :help completeopt
+-- menuone: popup even when there's only one match
+-- noinsert: Do not insert text until a selection is made
+-- noselect: Do not auto-select, nvim-cmp plugin will handle this for us.
+vim.o.completeopt = "menuone,noinsert,noselect"
+
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -92,6 +100,7 @@ cmp.setup({
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<Tab>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -141,11 +150,11 @@ cmp.setup({
 			-- NOTE: order matters
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
-				nvim_lua = "[Nvim]",
 				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
 				path = "[Path]",
+				buffer = "[Buffer]",
 				emoji = "[Emoji]",
+				nvim_lua = "[Nvim]",
 
 				--[[ nvim_lsp = "", ]]
 				--[[ nvim_lua = "", ]]

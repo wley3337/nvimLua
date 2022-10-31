@@ -95,7 +95,7 @@ keymap("n", "<F1>", ": lua require('dap').continue()<cr>", opts)
 keymap("n", "<F2>", "<cmd>lua require('dap').step_into()<cr>", opts)
 keymap("n", "<F3>", "<cmd>lua require('dap').step_over()<cr>", opts)
 keymap("n", "<F4>", "<cmd>lua require('dap').step_out()<cr>", opts)
-keymap("n", "<F5>", ":lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>BP", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
 keymap(
 	"n",
