@@ -48,6 +48,8 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("ts-26a/vim-darkspace") -- colorscheme
+	use("tiagovla/tokyodark.nvim") -- colorscheme
+	use("navarasu/onedark.nvim") -- colorscheme
 	use("kyazdani42/nvim-web-devicons") -- dependancy for nvim-tree and recommend for bufferline
 	use("kyazdani42/nvim-tree.lua") -- tree file explorer
 	use("akinsho/bufferline.nvim") -- recommends nvim-web-devicons as a dependancy
