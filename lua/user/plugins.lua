@@ -50,6 +50,8 @@ return packer.startup(function(use)
 	use("ts-26a/vim-darkspace") -- colorscheme
 	use("tiagovla/tokyodark.nvim") -- colorscheme
 	use("navarasu/onedark.nvim") -- colorscheme
+	use("shaunsingh/moonlight.nvim") -- colorscheme
+	use("ray-x/aurora") -- colorscheme
 	use("kyazdani42/nvim-web-devicons") -- dependancy for nvim-tree and recommend for bufferline
 	use("kyazdani42/nvim-tree.lua") -- tree file explorer
 	use("akinsho/bufferline.nvim") -- recommends nvim-web-devicons as a dependancy

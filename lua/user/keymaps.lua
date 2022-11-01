@@ -61,7 +61,7 @@ keymap("n", "<leader>fb", ":Telescope file_browser<cr>", opts)
 --[[ keymap("n", "<leader>fif", "<cmd>lua require('telescope.builtin').()<cr>", opts) ]]
 keymap("n", "<leader>fff", "<cmd>lua require('user.custom_functions').curr_buf_fzf()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-
+keymap("n", "<leader>fr", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
 -- FORMATTING --
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
