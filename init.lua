@@ -23,4 +23,5 @@ require("user.plugin_settings.dap-settings")
 -- require "user.whichkey"
 --[[ require("user.autocommands") ]]
 require("user.rust-tools")
+require("user.git-blame")
 -- require("user.surround")

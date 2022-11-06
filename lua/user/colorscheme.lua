@@ -2,9 +2,10 @@
 -- local colorscheme = "tokyonight" -- favorite so far
 -- local colorscheme = "darkspace"
 -- local colorscheme = "onedark" -- link: https://github.com/navarasu/onedark.nvim#installation
-local colorscheme = "moonlight"
+-- local colorscheme = "moonlight"
 -- local colorscheme = "aurora"
 -- local colorscheme = "tokyodark"
+local colorscheme = "bogster"
 
 -- colorscheme specific setups
 

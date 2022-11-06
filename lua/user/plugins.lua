@@ -51,6 +51,7 @@ return packer.startup(function(use)
 	use("tiagovla/tokyodark.nvim") -- colorscheme
 	use("navarasu/onedark.nvim") -- colorscheme
 	use("shaunsingh/moonlight.nvim") -- colorscheme
+	use("vv9k/bogster") -- colorscheme
 	use("ray-x/aurora") -- colorscheme
 	use("kyazdani42/nvim-web-devicons") -- dependancy for nvim-tree and recommend for bufferline
 	use("kyazdani42/nvim-tree.lua") -- tree file explorer
@@ -90,7 +91,8 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-
+	-- -- GIT
+	use("f-person/git-blame.nvim") -- git blame plugin also lets you link out to PR
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- dependancy plenary fuzzy finder
 	use("nvim-telescope/telescope-file-browser.nvim") -- helps with file browsing and creating files
