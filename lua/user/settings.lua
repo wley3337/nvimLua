@@ -1,4 +1,7 @@
 HOME = os.getenv("HOME")
+-- set to disable netrw so nvimtree can take over
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.o.syntax = "on" -- Enables syntax highlighing
 --vim.o.autochdir = true                         -- Your working directory will always be the same as your working directory

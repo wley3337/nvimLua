@@ -10,7 +10,7 @@ require("user.treesitter")
 require("user.autopairs")
 require("user.comment")
 require("user.gitsigns")
---[[ require("user.plugin_settings.nvim-tree") ]]
+require("user.plugin_settings.nvim-tree")
 require("user.lsp.null-ls")
 require("user.plugin_settings.dap-settings")
 --[[ require("user.bufferline") ]]

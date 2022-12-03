@@ -5,8 +5,11 @@
 -- local colorscheme = "moonlight"
 -- local colorscheme = "aurora"
 -- local colorscheme = "tokyodark"
-local colorscheme = "bogster"
-
+--[[ local colorscheme = "bogster" ]]
+local colorscheme = "night-owl"
+-- Vim script lightline enable theme
+-- To enable the lightline theme
+--let g:lightline = { 'colorscheme': 'nightowl' }
 -- colorscheme specific setups
 
 if colorscheme == "tokyodark" then
