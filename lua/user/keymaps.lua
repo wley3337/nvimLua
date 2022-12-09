@@ -105,7 +105,8 @@ keymap(
 )
 keymap("n", "<leader>dr ", "<cmd>lua require'dap'.repl.open()<cr>", opts)
 keymap("n", "<leader>dl ", "<cmd>lua require('dap').run_last()<cr>", opts)
-
+-- GitSigns --
+keymap("n", "<leader>gb", ":GitBlameToggle<cr>", opts)
 -- TERMINAL --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
